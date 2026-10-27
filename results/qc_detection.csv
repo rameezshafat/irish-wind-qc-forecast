@@ -1,0 +1,11 @@
+variant,fault,hour_recall,event_recall,precision,false_alarm_rate
+point + model,all,0.5121,,0.8598,0.0182
+point + model,degraded,0.359,0.96,,
+point + model,spike,0.9738,0.9738,,
+point + model,stuck,1.0,1.0,,
+point + model,zero,0.7852,0.9338,,
+point checks,all,0.2321,,0.7851,0.0142
+point checks,degraded,0.0935,0.6562,,
+point checks,spike,0.9738,0.9738,,
+point checks,stuck,1.0,1.0,,
+point checks,zero,0.0006,0.0088,,
