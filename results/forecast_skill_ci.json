@@ -1,0 +1,30 @@
+{
+  "lgbm_qc_vs_nwp_raw": [
+    0.1849,
+    0.209
+  ],
+  "lgbm_qc_vs_persistence": [
+    0.5153,
+    0.5473
+  ],
+  "lgbm_raw_vs_nwp_raw": [
+    0.1859,
+    0.209
+  ],
+  "lgbm_raw_vs_persistence": [
+    0.5157,
+    0.5473
+  ],
+  "mos_linear_vs_nwp_raw": [
+    0.1545,
+    0.1731
+  ],
+  "mos_linear_vs_persistence": [
+    0.496,
+    0.5286
+  ],
+  "lgbm_qc_vs_lgbm_raw": [
+    -0.0023,
+    0.0015
+  ]
+}

@@ -1,0 +1,8 @@
+model,model_name,mae,rmse,bias,skill_vs_persistence,skill_vs_climatology,skill_vs_nwp_raw,n
+persistence,Persistence,5.4581,7.1225,-0.9811,0.0,-0.258,-0.7149,115161
+seasonal,Seasonal naive (t - 48 h),5.4199,7.1177,-0.024,0.0007,-0.2572,-0.7138,115161
+climatology,Climatology,4.4042,5.6615,-0.0244,0.2051,0.0,-0.3632,115161
+nwp_raw,Raw NWP (day-ahead),3.1366,4.1532,-0.3065,0.4169,0.2664,0.0,115161
+mos_linear,Linear MOS,2.6254,3.4722,0.3662,0.5125,0.3867,0.164,115161
+lgbm_raw,LightGBM (raw targets),2.4967,3.3345,0.2255,0.5318,0.411,0.1971,115161
+lgbm_qc,LightGBM (QC-cleaned targets),2.498,3.3359,0.227,0.5316,0.4108,0.1968,115161

@@ -1,0 +1,27 @@
+{
+  "features": [
+    "nwp2",
+    "dir_sin",
+    "dir_cos",
+    "hour_sin",
+    "hour_cos",
+    "doy_sin",
+    "doy_cos",
+    "obs_last",
+    "obs_mean24",
+    "bias7d",
+    "lead",
+    "station_code"
+  ],
+  "station_codes": {
+    "532": 0,
+    "1575": 1,
+    "2375": 2,
+    "2275": 3,
+    "518": 4,
+    "3904": 5,
+    "1075": 6,
+    "275": 7
+  },
+  "trained_through": "2026-09-30 23:00:00+00:00"
+}

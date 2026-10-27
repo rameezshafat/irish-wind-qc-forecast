@@ -33,3 +33,24 @@ def test_api_health_and_qc():
     out = client.post("/qc", json={"readings": readings}).json()
     assert len(out) == 8
     assert all(row["flatline"] for row in out)
+
+
+def test_forecast_endpoint_returns_next_day():
+    import pytest
+
+    from windqc.api import MODEL_DIR
+
+    if not (MODEL_DIR / "lgbm_dayahead.txt").exists():
+        pytest.skip("model not trained")
+    origin = "2025-03-10T00:00:00Z"
+    hours = [f"2025-03-{d:02d}T{h:02d}:00:00Z" for d in range(3, 13) for h in range(24)]
+    obs = [{"timestamp": t, "value": 12.0} for t in hours if t <= origin]
+    nwp = [{"timestamp": t, "speed": 14.0, "direction": 250.0} for t in hours]
+    client = TestClient(app)
+    out = client.post("/forecast", json={"station": "532", "origin": origin,
+                                         "observations": obs, "nwp_day_ahead": nwp})
+    assert out.status_code == 200, out.text
+    body = out.json()
+    assert len(body) == 24
+    assert body[0]["timestamp"].startswith("2025-03-11T01:00")
+    assert all(0 < row["forecast"] < 40 for row in body)
